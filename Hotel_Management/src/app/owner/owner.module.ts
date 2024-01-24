@@ -3,17 +3,19 @@ import { CommonModule } from '@angular/common';
 
 import { OwnerRoutingModule } from './owner-routing.module';
 import { OwnerlandingComponent } from './ownerlanding/ownerlanding.component';
-import { MatButtonModule } from '@angular/material/button';
+import { SharedModule } from '../shared/shared.module';
+import { OwnerSuccessComponent } from './owner-success/owner-success.component';
 
 
 @NgModule({
   declarations: [
-    OwnerlandingComponent
+    OwnerlandingComponent,
+    OwnerSuccessComponent
   ],
   imports: [
     CommonModule,
     OwnerRoutingModule,
-    MatButtonModule
+    SharedModule
   ]
 })
 export class OwnerModule { }

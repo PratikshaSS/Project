@@ -1,7 +1,37 @@
-{  
-    "admin" : [], 
-    "owner " : [], 
-    "user" : [], 
-    "hotelDetails":[], 
-    "hotelBooking":[] 
+{
+  "admin": [
+    {
+      "id": "8445",
+      "fullName": "",
+      "mob": "23534576",
+      "gender": null,
+      "pan": "24545ety",
+      "password": "gdghdg",
+      "confirmPass": "gdghdg"
     }
+  ],
+  "owner": [
+    {
+      "id": "d608",
+      "fullName": "",
+      "mob": "34676545",
+      "gender": null,
+      "pan": "fhmj",
+      "password": "3456",
+      "confirmPass": "3456"
+    }
+  ],
+  "user": [
+    {
+      "id": "c2ce",
+      "fullName": "",
+      "mob": "34556",
+      "gender": null,
+      "pan": "4534356",
+      "password": "3453656",
+      "confirmPass": "3453656"
+    }
+  ],
+  "hotelDetails": [],
+  "hotelBooking": []
+}

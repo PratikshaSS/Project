@@ -1,1 +1,77 @@
-<p>signup works!</p>
+<!-- <p>signup works!</p> -->
+<div class="form-container">
+    <!-- {{apiCallService.name}} --{{name1}} -->
+
+    <form [formGroup]="signUpForm" class="signup">
+
+        <mat-form-field class="form-fields">
+            <mat-label>Full Name</mat-label>
+            <input type="text" matInput formControlName="fullname">
+
+            <mat-hint *ngIf="!signUpForm.get('fullName')?.touched">
+                <!-- Please enter your name here -->
+            </mat-hint>
+            <mat-error *ngIf="signUpForm.get('fullName')?.errors?.['required'] && signUpForm.get('fullName')?.touched">
+                Full name is required</mat-error>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="form-fields">
+            <mat-label>Mob No</mat-label>
+            <input type="text" matInput formControlName="mob">
+
+            <mat-hint>
+                <!-- Please enter mobile number -->
+            </mat-hint>
+            <mat-error *ngIf="signUpForm.get('mob')?.errors?.['maxlength']
+            && signUpForm.get('mob')?.touched">
+                Mobile number should less than 10 digits
+            </mat-error>
+            <mat-error *ngIf="signUpForm.get('mob')?.errors?.['pattern'] 
+            && signUpForm.get('mob')?.touched 
+            && !signUpForm.get('mob')?.errors?.['maxlength']">
+                Invalid Pattern
+            </mat-error>
+        </mat-form-field>
+        <br>
+
+        <mat-label>Gender</mat-label>
+        <mat-radio-group formcontrolName="gender">
+            <mat-radio-button>Male</mat-radio-button>
+            <mat-radio-button>Female</mat-radio-button>
+        </mat-radio-group>
+        <br>
+
+        <mat-form-field class="form-fields">
+            <mat-label>Pan card</mat-label>
+            <input type="text" matInput formControlName="pan">
+            <mat-hint>
+                <!-- Enter your Pan -->
+            </mat-hint>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="form-fields">
+            <mat-label>Password</mat-label>
+            <input [type]="showPassword ? 'text' : 'password'" matInput formControlName="password" (keyup)="matchPassword()">
+            <mat-icon matSuffix *ngIf="showPassword" (click)="showPass()">visibility</mat-icon>
+            <mat-icon matSuffix *ngIf="!showPassword" (click)="showPass()">visibility_off</mat-icon>
+        </mat-form-field>
+        <!-- <mat-error *ngIf="isMatch">Password & Confirm password should match</mat-error> -->
+        <br>
+
+        <mat-form-field class="form-fields">
+            <mat-label>Confirm Password</mat-label>
+            <input [type]="showConfirmPassword ? 'text' : 'password'" matInput formControlName="confirmPass" (keyup)="matchPassword()">
+            <mat-icon matSuffix *ngIf="showConfirmPassword" (click)="showConfirmPass()">visibility</mat-icon>
+            <mat-icon matSuffix *ngIf="!showConfirmPassword" (click)="showConfirmPass()">visibility_off</mat-icon>
+        </mat-form-field>
+        <mat-error *ngIf="isMatch">Password and Confirm password should match</mat-error>
+
+        <br>
+
+        <button mat-raised-button-color="accent" class="btn" (click)="submit()">Submit</button>
+
+    </form>
+
+</div>

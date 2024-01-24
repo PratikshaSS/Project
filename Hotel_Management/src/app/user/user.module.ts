@@ -3,15 +3,19 @@ import { CommonModule } from '@angular/common';
 
 import { UserRoutingModule } from './user-routing.module';
 import { UserlandingComponent } from './userlanding/userlanding.component';
+import { SharedModule } from '../shared/shared.module';
+import { UserSuccessComponent } from './user-success/user-success.component';
 
 
 @NgModule({
   declarations: [
-    UserlandingComponent
+    UserlandingComponent,
+    UserSuccessComponent
   ],
   imports: [
     CommonModule,
-    UserRoutingModule
+    UserRoutingModule,
+    SharedModule
   ]
 })
 export class UserModule { }

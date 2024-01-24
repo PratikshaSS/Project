@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
 import { LandingComponent } from './landing/landing.component';
-import {MatButtonModule} from '@angular/material/button';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
@@ -15,13 +15,13 @@ import {MatButtonModule} from '@angular/material/button';
     AppComponent,
     SignupComponent,
     SigninComponent,
-    LandingComponent,
-    MatButtonModule
+    LandingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
